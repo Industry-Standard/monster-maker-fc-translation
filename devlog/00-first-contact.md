@@ -1,6 +1,6 @@
-# Translating Monster Maker FC
+# Introduction, Translating Monster Maker FC
 
-## Introduction
+## A preface on Approach, Background and Style
 
 Full disclosure; this will be a hacker's view into translating a video game. I will likely use brute force and observed behavior over in depth research and cunning plans. 
 
@@ -224,13 +224,13 @@ Looking at the memory at that point, there are a few things that can be seen:
 >
 > ``hexdump -C -s 0x00024060 -n 0x50 mmfc-hax.nes`` 
 
-After the end of our searched message (in hex ``0f 15``) is the hex value ``bc``, which I'm guessing is a clear / newline. After that is the next line of content. 
+After the end of our searched message (in hex ``0f 15``) is the hex value ``0xbc``, which I'm guessing is a clear / newline. After that is the next line of content. 
 
 ### Finding Dakuten
 
 The next line of text onscreen has a dakuten at the end of the third word. 
 
-![line two](media/first-screen-line-two.png)
+![line two](media/first-screen-unmodified.png)
 
 Here's the line in ROM. I've spaced out the bytes how they would match the words. To do this I looked up the values in the table I made above and did some basic guesswork. Here's what it looks like:
 
@@ -282,7 +282,7 @@ Looking at the message, here's my roughshod hand translation:
 > kitarubeki tokini
 >
 >
-> (t-eng: When it comes)
+> (t-eng: When the time comes)
 >
 > guessed hex values: ``0x10 0x19 0x32 0x26 _0xbe_ 0x90 _ 0x1d 0x10 0x1F _ 0xbc``
 >
